@@ -1,0 +1,22 @@
+body {
+    background-image: url("../images/starfleet.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#SW_RPG {
+    font-size: 3.125rem;
+    font-family: 'Anton', sans-serif;
+}
+
+.Row1 {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #ffffff;
+    box-sizing: border-box;
+    outline-style: solid;
+    outline-color: #1f8212;
+    outline-width: 3px;
+    align-items: center;
+    background-color: white;
+}
