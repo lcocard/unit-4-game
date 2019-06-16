@@ -33,43 +33,112 @@
         <!-- Title Row -->
 
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
             </div>
-            <div class="col-4" id="SW_RPG">
-                Star Wars RPG!
+            <div class="col-md-4" id="SW_RPG">
+                <p>Star Wars RPG!</p>
             </div>
         </div>
         <!-- Character Pick Row -->
-        <div class="row">
-            <div class="col-2 Row1 _0 float" id="Char-Pick1" value="char0" style="margin-left: 10px;">
+        <div class="row" id="charPick" style="margin-left: -10px;">
+            <div class="col-md-2 Row1 move0 float" id="Char-Pick0" value="char0">
                 <p class="name gridname0 0" value="0">Obi-Wan Kenobi</p>
                 <img src="assets/images/obiwankenobi.png" id="pic0">
                 <br>
                 <p class="HP char0hp char0 0"></p>
             </div>
-            <div class="col-2 Row1 _1 float" id="Char-Pick1" value="char1">
+            <div class="col-md-2 Row1 move1 float" id="Char-Pick1" value="char1">
                 <p class="name gridname1 1" value="1">Luke Skywalker</p>
                 <img src="assets/images/lukeskywalker.png" id="pic1">
                 <br>
                 <p class="HP char1hp char1 1"></p>
             </div>
-            <div class="col-2 Row1 _2 float" id="Char-Pick1" value="char2">
+            <div class="col-md-2 Row1 move2 float" id="Char-Pick2" value="char2">
                 <p class="name gridname2 2" value="2">Darth Sidious</p>
                 <img src="assets/images/darthsidious.png" id="pic2">
                 <br>
                 <p class="HP char2hp char2 2"></p>
             </div>
-            <div class="col-2 Row1 _3 float" id="Char-Pick1" value="char3">
+            <div class="col-md-2 Row1 move3 float" id="Char-Pick3" value="char3">
                 <p class="name gridname3 3" value="3">Darth Maul</p>
                 <img src="assets/images/darthmaul.png" id="pic3">
                 <br>
                 <p class="HP char3hp char1 3"></p>
             </div>
         </div>
+
+
+        <!-- "Your Character" Subtitle Row -->
+        <div class="row subtitle" style="margin-left: -10px;">
+            <div class="col-md-12" style="margin-left: -15px;">
+                <p>Your Character</p>
+            </div>
+        </div>
+
+        <!-- "Your Character" Picture Row -->
+        <div class="row" style="margin-left: -10px;">
+            <div class="col-md-12" id="yourCharPick" style="margin-left: -15px;">
+            </div>
+        </div>
+
+        <!-- "Enemies available to attack" Subtitle Row -->
+        <div class="row subtitle" style="margin-left: -10px;">
+            <div class="col-md-12" style="margin-left: -15px;">
+                <p>Enemies available to attack</p>
+            </div>
+        </div>
+
+        <!-- "Your Character" Picture Row -->
+        <div class="row" style="margin-left: -10px;">
+            <div class="col-md-12" id="enemy0" style="margin-left: -15px;">
+            </div>
+            <div class="col-md-12" id="enemy1" style="margin-left: -15px;">
+            </div>
+            <div class="col-md-12" id="enemy2" style="margin-left: -15px;">
+            </div>
+            <div class="col-md-12" id="enemy3" style="margin-left: -15px;">
+            </div>
+        </div>
+
+        <!-- "Fight Section" Subtitle Row -->
+        <div class="row subtitle" style="margin-left: -10px;">
+            <div class="col-md-12" style="margin-left: -15px;">
+                <p>Fight Section</p>
+            </div>
+        </div>
+
+        <!-- "Attack" Button Row -->
+        <div class="row" style="margin-left: -10px;">
+            <div class="col-md-12" style="margin-left: -15px;">
+                <button>Attack</button>
+            </div>
+        </div>
+
+        <!-- "Defender" Subtitle Row -->
+        <div class="row subtitle" style="margin-left: -10px;">
+            <div class="col-md-12" style="margin-left: -15px;">
+                <p>Defender</p>
+            </div>
+        </div>
+
+        <!-- "Defender" Picture Row -->
+        <div class="row" style="margin-left: -10px;">
+            <div class="col-md-12" id="defender" style="margin-left: -15px;">
+            </div>
+        </div>
+
+                <!-- "Restart" Button Row -->
+                <div class="row" style="margin-left: -10px;">
+                        <div class="col-md-12 restart" style="margin-left: -15px;">
+                            <button>Reset</button>
+                        </div>
+                    </div>
+
+
+
     </div>
-
-
     <script src="assets/javascript/game.js"></script>
+
 
 </body>
 
