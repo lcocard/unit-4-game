@@ -47,8 +47,28 @@ function initialize() {
     $(".init").hide();
     myC, myD = "";
 
+    characters.OWKenobi.HP = 120;
+    characters.LSkywalker.HP = 100;
+    characters.DSidious.HP = 150;
+    characters.DMaul.HP = 180;
+
+    characters.OWKenobi.AP = 8;
+    characters.LSkywalker.AP = 10;
+    characters.DSidious.AP = 10;
+    characters.DMaul.AP = 12;
 
 }
+
+console.log("OWKenobi HP = " + characters.OWKenobi.HP);
+console.log("OWKenobi AP = " + characters.OWKenobi.AP);
+console.log("LSkywalker HP = " + characters.LSkywalker.HP);
+console.log("LSkywalker AP = " + characters.LSkywalker.AP);
+console.log("DSidious HP = " + characters.DSidious.HP);
+console.log("DSidious AP = " + characters.DSidious.AP);
+console.log("DMaul HP = " + characters.DMaul.HP);
+console.log("DMaul AP = " + characters.DMaul.AP);
+
+
 
 /* Pick your character (attacker) */
 
@@ -60,8 +80,13 @@ function initialize() {
 
 /* Attack */
 
+$(document).ready(function(){
+
+
+initialize ();
+
 /* New Game */
 
-
+});
 
 
