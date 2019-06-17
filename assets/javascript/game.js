@@ -3,7 +3,24 @@
 /* Global variables */
 
 $(".init").hide();
-var name, aChar, aHP, aAP, aCAP, dChar, dHP, dAP, dCAP, yourC, yourD, myC, myD, attk, deff;
+var myC = "";
+var myD = "";
+var name;
+var aRealName;
+var aChar;
+var aHP;
+var aAP;
+var aCAP;
+var dChar;
+var dHP;
+var dAP;
+var dCAP;
+var yourC;
+var yourD;
+var attk;
+var deff;
+
+
 var characters = {
     OWKenobi: {
         name: "OWKenobi",
@@ -45,7 +62,10 @@ function initialize() {
     $("#charPick").show();
     $(".attkbtn").show();
     $(".init").hide();
-    myC, myD = "";
+    var myC = "";
+    var myD = "";
+
+    console.log("INIT myC = " + myC);
 
     characters.OWKenobi.HP = 120;
     characters.LSkywalker.HP = 100;
@@ -79,9 +99,8 @@ function initialize() {
     $(".char2hp").html(characters.DSidious.HP);
     $(".char3hp").html(characters.DMaul.HP);
 
-
-
-}
+    $(".Row1").css({ "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white" });
+};
 
 console.log("OWKenobi HP = " + characters.OWKenobi.HP);
 console.log("OWKenobi AP = " + characters.OWKenobi.AP);
@@ -92,25 +111,73 @@ console.log("DSidious AP = " + characters.DSidious.AP);
 console.log("DMaul HP = " + characters.DMaul.HP);
 console.log("DMaul AP = " + characters.DMaul.AP);
 
+$(document).ready(function () {
+    initialize();
+
+    /* Pick your character (attacker) */
+    $(".Row1").click(function () {
+        if (myC == "") {
+            console.log(this);
+            $(this).appendTo($("#yourCharPick"));
+            myC = $(this);
+            yourC = $(myC).attr("value");
+        }
+
+        if (yourC == characters.OWKenobi.name) {
+            aHP = characters.OWKenobi.HP;
+            aAP = characters.OWKenobi.AP;
+            aCAP = characters.OWKenobi.CAP;
+            aRealName = characters.OWKenobi.realName;
+            attk = characters.OWKenobi;
+        }
+
+        else if (yourC == characters.LSkywalker.name) {
+            aHP = characters.LSkywalker.HP;
+            aAP = characters.LSkywalker.AP;
+            aCAP = characters.LSkywalker.CAP;
+            aRealName = characters.LSkywalker.realName;
+            attk = characters.LSkywalker;
+        }
+
+        else if (yourC == characters.DSidious.name) {
+            aHP = characters.DSidious.HP;
+            aAP = characters.DSidious.AP;
+            aCAP = characters.DSidious.CAP;
+            aRealName = characters.DSidious.realName;
+            attk = characters.DSidious;
+        }
+
+        else if (yourC == characters.DMaul.name) {
+            aHP = characters.DMaul.HP;
+            aAP = characters.DMaul.AP;
+            aCAP = characters.DMaul.CAP;
+            aRealName = characters.DMaul.realName;
+            attk = characters.DMaul;
+        }
+
+        /* Move the rest of the characters in the "Enemies available to attack" row */
+
+        for (var i = 0; i < 4; i++) {
+            $(".move" + [i]).not(myC).appendTo("#enemy" + [i]);
+        }
+        $(".move" + [i]).not(myC).css({
+            "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
+        });
+
+        $(".Row1").hide();
+
+    });
 
 
-/* Pick your character (attacker) */
 
-/* Move the rest of the characters in the "Enemies available to attack" row */
+    /* Pick your character (attacker) */
 
-/* Pick your character (attacker) */
+    /* Pick enemy (defender) */
 
-/* Pick enemy (defender) */
+    /* Attack */
 
-/* Attack */
-
-$(document).ready(function(){
-
-
-initialize ();
-
-/* New Game */
-
+    /* New Game */
+    /* initialize(); */
 });
 
 
