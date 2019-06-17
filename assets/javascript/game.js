@@ -57,6 +57,30 @@ function initialize() {
     characters.DSidious.AP = 10;
     characters.DMaul.AP = 12;
 
+    $(".You_Attacked").empty();
+    $(".Attacked_Back").empty();
+    $(".You_Been_Defeated").empty();
+    $(".You_Won_GO").empty();
+    $(".You_Have_Defeated_GO").empty();
+    $(".No_Enemy_Here").empty();
+
+    $(".gridname0").html(characters.OWKenobi.realName);
+    $(".gridname1").html(characters.LSkywalker.realName);
+    $(".gridname2").html(characters.DSidious.realName);
+    $(".gridname3").html(characters.DMaul.realName);
+
+    $("#Char-Pick0").appendTo("#charPick");
+    $("#Char-Pick1").appendTo("#charPick");
+    $("#Char-Pick2").appendTo("#charPick");
+    $("#Char-Pick3").appendTo("#charPick");
+
+    $(".char0hp").html(characters.OWKenobi.HP);
+    $(".char1hp").html(characters.LSkywalker.HP);
+    $(".char2hp").html(characters.DSidious.HP);
+    $(".char3hp").html(characters.DMaul.HP);
+
+
+
 }
 
 console.log("OWKenobi HP = " + characters.OWKenobi.HP);
