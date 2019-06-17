@@ -62,8 +62,8 @@ function initialize() {
     $("#charPick").show();
     $(".attkbtn").show();
     $(".init").hide();
-    var myC = "";
-    var myD = "";
+    myC = "";
+    myD = "";
 
     console.log("INIT myC = " + myC);
 
@@ -118,42 +118,53 @@ $(document).ready(function () {
     $(".Row1").click(function () {
         if (myC == "") {
             console.log(this);
-            $(this).appendTo($("#yourCharPick"));
+            /*$(this).appendTo($("#yourCharPick"));*/
+            $(".yourCharPick").append($(this).clone());
             myC = $(this);
+            console.log("myC = " + myC);
             yourC = $(myC).attr("value");
+            console.log("yourC = " + yourC);
+            console.log("yourCharPick = " + yourCharPick)
+            /*yourC.text($(this))*/
+
+            if (yourC == characters.OWKenobi.name) {
+                aHP = characters.OWKenobi.HP;
+                aAP = characters.OWKenobi.AP;
+                aCAP = characters.OWKenobi.CAP;
+                aRealName = characters.OWKenobi.realName;
+                attk = characters.OWKenobi;
+            }
+
+            else if (yourC == characters.LSkywalker.name) {
+                aHP = characters.LSkywalker.HP;
+                aAP = characters.LSkywalker.AP;
+                aCAP = characters.LSkywalker.CAP;
+                aRealName = characters.LSkywalker.realName;
+                attk = characters.LSkywalker;
+            }
+
+            else if (yourC == characters.DSidious.name) {
+                aHP = characters.DSidious.HP;
+                aAP = characters.DSidious.AP;
+                aCAP = characters.DSidious.CAP;
+                aRealName = characters.DSidious.realName;
+                attk = characters.DSidious;
+            }
+
+            else if (yourC == characters.DMaul.name) {
+                aHP = characters.DMaul.HP;
+                aAP = characters.DMaul.AP;
+                aCAP = characters.DMaul.CAP;
+                aRealName = characters.DMaul.realName;
+                attk = characters.DMaul;
+            }
+            console.log("aHP = " + aHP);
+            console.log("aAP = " + aAP);
+            console.log("aCAP = " + aCAP);
+            console.log("aRealName = " + aRealName);
+            console.log("attk = " + attk);
         }
 
-        if (yourC == characters.OWKenobi.name) {
-            aHP = characters.OWKenobi.HP;
-            aAP = characters.OWKenobi.AP;
-            aCAP = characters.OWKenobi.CAP;
-            aRealName = characters.OWKenobi.realName;
-            attk = characters.OWKenobi;
-        }
-
-        else if (yourC == characters.LSkywalker.name) {
-            aHP = characters.LSkywalker.HP;
-            aAP = characters.LSkywalker.AP;
-            aCAP = characters.LSkywalker.CAP;
-            aRealName = characters.LSkywalker.realName;
-            attk = characters.LSkywalker;
-        }
-
-        else if (yourC == characters.DSidious.name) {
-            aHP = characters.DSidious.HP;
-            aAP = characters.DSidious.AP;
-            aCAP = characters.DSidious.CAP;
-            aRealName = characters.DSidious.realName;
-            attk = characters.DSidious;
-        }
-
-        else if (yourC == characters.DMaul.name) {
-            aHP = characters.DMaul.HP;
-            aAP = characters.DMaul.AP;
-            aCAP = characters.DMaul.CAP;
-            aRealName = characters.DMaul.realName;
-            attk = characters.DMaul;
-        }
 
         /* Move the rest of the characters in the "Enemies available to attack" row */
 
