@@ -154,15 +154,15 @@ $(document).ready(function () {
     $(".Row1").click(function () {
         if (myC === "") {
             console.log(this);
-            /*$(this).appendTo($("#yourCharPick"));*/
-            $(".yourCharPick").append($(this).clone());
+            // $("#grid_row_yourChar").text($(this));
+            // $(this).appendTo("#grid_row_yourChar");
+            // $("#grid_row_yourChar").append($(this));
 
             myC = $(this);
             console.log("myC = " + myC);
             yourC = $(myC).attr("value");
             console.log("yourC = " + yourC);
-            console.log("yourCharPick = " + yourCharPick)
-            /*yourC.text($(this))*/
+            //console.log("yourCharPick = " + yourCharPick)
 
             if (yourC == characters.OWKenobi.name) {
                 aHP = characters.OWKenobi.HP;
@@ -171,8 +171,30 @@ $(document).ready(function () {
                 aRealName = characters.OWKenobi.realName;
                 attk = characters.OWKenobi;
                 picSrc = characters.OWKenobi.pic;
-                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
+                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
+                $(".Row2").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
+                });
+                $("img").css({
+                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
+                });
+                $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + aHP + '</span>');
+                $(".gridname_yourCharPick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
+                $(".hp_char_pick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
             }
+
+
 
             else if (yourC == characters.LSkywalker.name) {
                 aHP = characters.LSkywalker.HP;
@@ -181,7 +203,27 @@ $(document).ready(function () {
                 aRealName = characters.LSkywalker.realName;
                 attk = characters.LSkywalker;
                 picSrc = characters.LSkywalker.pic;
-                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
+                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
+                $(".Row2").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
+                });
+                $("img").css({
+                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
+                });
+                $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + aHP + '</span>');
+                $(".gridname_yourCharPick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
+                $(".hp_char_pick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
             }
 
             else if (yourC == characters.DSidious.name) {
@@ -191,7 +233,27 @@ $(document).ready(function () {
                 aRealName = characters.DSidious.realName;
                 attk = characters.DSidious;
                 picSrc = characters.DSidious.pic;
-                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
+                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
+                $(".Row2").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
+                });
+                $("img").css({
+                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
+                });
+                $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + aHP + '</span>');
+                $(".gridname_yourCharPick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
+                $(".hp_char_pick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
             }
 
             else if (yourC == characters.DMaul.name) {
@@ -201,7 +263,27 @@ $(document).ready(function () {
                 aRealName = characters.DMaul.realName;
                 attk = characters.DMaul;
                 picSrc = characters.DMaul.pic;
-                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
+                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
+                $(".Row2").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
+                });
+                $("img").css({
+                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
+                });
+                $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + aHP + '</span>');
+                $(".gridname_yourCharPick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
+                $(".hp_char_pick").css({
+                    "font-size": "0.6em",
+                    "text-align": "center",
+                    "font-family": "'Orbitron', sans-serif",
+                    "margin-bottom": "0px"
+                });
             }
             console.log("aHP = " + aHP);
             console.log("aAP = " + aAP);
@@ -209,6 +291,7 @@ $(document).ready(function () {
             console.log("aRealName = " + aRealName);
             console.log("attk = " + attk);
             console.log("picSrc = " + picSrc);
+            //  console.log("this characters.this.realName = " + characters.this.realName);
         }
 
 
@@ -218,12 +301,12 @@ $(document).ready(function () {
 
             /* $(".move" + [i]).not(myC).appendTo("#enemy" + [i]); */
             $("#enemy" + [i]).append($(".move" + [i]).clone());
-        
-        $(".move" + [i]).css({
-            "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "white"
-        });
 
-    }
+            $(".move" + [i]).css({
+                "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "white"
+            });
+
+        }
 
         $(".Row1").hide();
 
