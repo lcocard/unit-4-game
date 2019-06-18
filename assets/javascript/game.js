@@ -6,6 +6,7 @@ $(".init").hide();
 var myC = "";
 var myD = "";
 var picSrc = "";
+var img;
 var name;
 var aRealName;
 var aChar;
@@ -170,6 +171,7 @@ $(document).ready(function () {
                 aRealName = characters.OWKenobi.realName;
                 attk = characters.OWKenobi;
                 picSrc = characters.OWKenobi.pic;
+                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
             }
 
             else if (yourC == characters.LSkywalker.name) {
@@ -179,6 +181,7 @@ $(document).ready(function () {
                 aRealName = characters.LSkywalker.realName;
                 attk = characters.LSkywalker;
                 picSrc = characters.LSkywalker.pic;
+                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
             }
 
             else if (yourC == characters.DSidious.name) {
@@ -188,6 +191,7 @@ $(document).ready(function () {
                 aRealName = characters.DSidious.realName;
                 attk = characters.DSidious;
                 picSrc = characters.DSidious.pic;
+                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
             }
 
             else if (yourC == characters.DMaul.name) {
@@ -197,6 +201,7 @@ $(document).ready(function () {
                 aRealName = characters.DMaul.realName;
                 attk = characters.DMaul;
                 picSrc = characters.DMaul.pic;
+                myImage = appendImage(picSrc, "yourCharPick", "pic_yourCharPick");
             }
             console.log("aHP = " + aHP);
             console.log("aAP = " + aAP);
@@ -215,7 +220,7 @@ $(document).ready(function () {
             $("#enemy" + [i]).append($(".move" + [i]).clone());
         
         $(".move" + [i]).css({
-            "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
+            "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "white"
         });
 
     }
