@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
 
     <title>Star Wars RPG</title>
+    <!-- --------------------------------------------------------- -->
 
     <!-- FavIcon -->
     <link rel="icon" type="image/png" href="assets/images/SW-favicon.png">
@@ -31,6 +32,7 @@
     <div class="container-fluid">
 
         <!-- Title Row -->
+        <!-- --------------------------------------------------------- -->
 
         <div class="row">
             <div class="col-lg-8">
@@ -40,6 +42,7 @@
             </div>
         </div>
         <!-- Character Pick Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row" id="charPick" style="margin-left: -10px;">
             <div class=".col-xs-2.col-sm-2.col-md-2 Row1 move0 float" id="Char-Pick0" value="OWKenobi">
                 <p class="name gridname0 0" value="0">Obi-Wan Kenobi</p>
@@ -72,6 +75,7 @@
         </div>
 
         <!-- "Your Character" Subtitle Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row subtitle" style="margin-left: -10px;">
             <div class="col-md-12" style="margin-left: -15px;">
                 <p>Your Character</p>
@@ -79,15 +83,21 @@
         </div>
 
         <!-- "Your Character" Picture Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row" style="margin-left: -10px;">
-            <div class="col-md-12" style="margin-left: -15px;">
+            <div class=".col-xs-2.col-sm-2.col-md-2 Row2 float" style="margin-left: -15px;" id="yourCharPick" value="">
+                <p class="name gridname_yourCharPick" value=""></p>
                 <div class="card" style="border: 0;">
-                    <img class="card-img-top" id="yourCharPick">
+                    <img class="card-img-top" src="" id="pic_yourCharPick">
                 </div>
+                <p class="aHP char_pick"></p>
+            </div>
+            <div class=".col-xs-10.col-sm-10.col-md-10 Row2 float">
             </div>
         </div>
 
-        <!-- "Enemies available to attack" Subtitle Row -->
+        <!-- "Enemies available to attack" Subtitle Row  -->
+        <!-- --------------------------------------------------------- -->
         <div class="row subtitle" style="margin-left: -10px;">
             <div class="col-md-12" style="margin-left: -15px;">
                 <p>Enemies available to attack</p>
@@ -95,18 +105,34 @@
         </div>
 
         <!-- "Enemies available to attack" Picture Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row" style="margin-left: -10px;">
-            <div class="col-md-12" id="enemy0" style="margin-left: -15px;">
+            <div class=".col-xs-2.col-sm-2.col-md-2 Row3 float" style="margin-left: -15px;" id="enemy0" value="">
+                <p class="name gridname_enemy0" value=""></p>
+                <div class="card" style="border: 0;">
+                    <img class="card-img-top" src="" id="pic_enemy0">
+                </div>
+                <p class="HP char_pick"></p>
             </div>
-            <div class="col-md-12" id="enemy1" style="margin-left: -15px;">
+            <div class=".col-xs-2.col-sm-2.col-md-2 Row3 float" style="margin-left: -15px;" id="enemy1" value="">
+                <p class="name gridname_enemy1" value=""></p>
+                <div class="card" style="border: 0;">
+                    <img class="card-img-top" src="" id="pic_enemy1">
+                </div>
+                <p class="HP char_pick"></p>
             </div>
-            <div class="col-md-12" id="enemy2" style="margin-left: -15px;">
+            <div class=".col-xs-2.col-sm-2.col-md-2 Row3 float" style="margin-left: -15px;" id="enemy2" value="">
+                <p class="name gridname_enemy02" value=""></p>
+                <div class="card" style="border: 0;">
+                    <img class="card-img-top" src="" id="pic_enemy2">
+                </div>
+                <p class="char_pick"></p>
             </div>
-            <div class="col-md-12" id="enemy3" style="margin-left: -15px;">
+            <div class=".col-xs-6.col-sm-6.col-md-6 Row3 float">
             </div>
         </div>
-
         <!-- "Fight Section" Subtitle Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row subtitle" style="margin-left: -10px;">
             <div class="col-md-12" style="margin-left: -15px;">
                 <p>Fight Section</p>
@@ -114,6 +140,7 @@
         </div>
 
         <!-- "Attack" Button Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row" style="margin-left: -10px;">
             <div class="col-md-12 attkbtn" style="margin-left: -15px;">
                 <button>Attack</button>
@@ -121,6 +148,7 @@
         </div>
 
         <!-- "Defender" Subtitle Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row subtitle" style="margin-left: -10px;">
             <div class="col-md-12" style="margin-left: -15px;">
                 <p>Defender</p>
@@ -128,12 +156,21 @@
         </div>
 
         <!-- "Defender" Picture Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row" style="margin-left: -10px;">
-            <div class="col-md-12" id="defender" style="margin-left: -15px;">
+            <div class=".col-xs-2.col-sm-2.col-md-2 Row4 float" style="margin-left: -15px;" id="defender" value="">
+                <p class="name gridname_defender" value=""></p>
+                <div class="card" style="border: 0;">
+                    <img class="card-img-top" src="" id="pic_defender">
+                </div>
+                <p class="aHP char_defender"></p>
+            </div>
+            <div class=".col-xs-10.col-sm-10.col-md-10 Row2 float">
             </div>
         </div>
 
         <!-- Game messages Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row subtitle" style="margin-left: -10px;">
             <div class="col-md-12" style="margin-left: -15px;">
                 <br><br>
@@ -147,6 +184,7 @@
         </div>
 
         <!-- "Restart" Button Row -->
+        <!-- --------------------------------------------------------- -->
         <div class="row" style="margin-left: -10px;">
             <div class="col-md-12 init" style="margin-left: -15px;">
                 <button>Reset</button>

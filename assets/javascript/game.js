@@ -5,6 +5,7 @@
 $(".init").hide();
 var myC = "";
 var myD = "";
+var picSrc = "";
 var name;
 var aRealName;
 var aChar;
@@ -55,6 +56,22 @@ var characters = {
         pic: "assets/images/darthmaul.png"
     }
 };
+
+/* ************************ Append Image *********************************** */
+
+function appendImage(imageSource, containerId, imageId) {
+    img = document.createElement("IMG");
+    img.src = imageSource;
+    img.setAttribute('id', imageId);
+    document.getElementById(containerId).appendChild(img);
+    return imageId;
+}
+
+/* ************************ Remove Image *********************************** */
+function removeImage(imageId) {
+    elementToBeRemoved = document.getElementById(imageId);
+    elementToBeRemoved.parentNode.removeChild(elementToBeRemoved);
+}
 
 /* Game reset */
 
@@ -111,15 +128,34 @@ console.log("DSidious AP = " + characters.DSidious.AP);
 console.log("DMaul HP = " + characters.DMaul.HP);
 console.log("DMaul AP = " + characters.DMaul.AP);
 
+/* ************************************************************************* */
+/* ************************ Append Image *********************************** */
+
+/* function appendImage(imageSource, containerId, imageId) {
+    img = document.createElement("IMG");
+    img.src = imageSource;
+    img.setAttribute('id', imageId);
+    document.getElementById(containerId).appendChild(img);
+    return imageId;
+} */
+
+/* ************************ Remove Image *********************************** */
+/* function removeImage(imageId) {
+    elementToBeRemoved = document.getElementById(imageId);
+    elementToBeRemoved.parentNode.removeChild(elementToBeRemoved);
+} */
+/* ************************************************************************** */
+
 $(document).ready(function () {
     initialize();
 
     /* Pick your character (attacker) */
     $(".Row1").click(function () {
-        if (myC == "") {
+        if (myC === "") {
             console.log(this);
             /*$(this).appendTo($("#yourCharPick"));*/
             $(".yourCharPick").append($(this).clone());
+
             myC = $(this);
             console.log("myC = " + myC);
             yourC = $(myC).attr("value");
@@ -133,6 +169,7 @@ $(document).ready(function () {
                 aCAP = characters.OWKenobi.CAP;
                 aRealName = characters.OWKenobi.realName;
                 attk = characters.OWKenobi;
+                picSrc = characters.OWKenobi.pic;
             }
 
             else if (yourC == characters.LSkywalker.name) {
@@ -141,6 +178,7 @@ $(document).ready(function () {
                 aCAP = characters.LSkywalker.CAP;
                 aRealName = characters.LSkywalker.realName;
                 attk = characters.LSkywalker;
+                picSrc = characters.LSkywalker.pic;
             }
 
             else if (yourC == characters.DSidious.name) {
@@ -149,6 +187,7 @@ $(document).ready(function () {
                 aCAP = characters.DSidious.CAP;
                 aRealName = characters.DSidious.realName;
                 attk = characters.DSidious;
+                picSrc = characters.DSidious.pic;
             }
 
             else if (yourC == characters.DMaul.name) {
@@ -157,23 +196,29 @@ $(document).ready(function () {
                 aCAP = characters.DMaul.CAP;
                 aRealName = characters.DMaul.realName;
                 attk = characters.DMaul;
+                picSrc = characters.DMaul.pic;
             }
             console.log("aHP = " + aHP);
             console.log("aAP = " + aAP);
             console.log("aCAP = " + aCAP);
             console.log("aRealName = " + aRealName);
             console.log("attk = " + attk);
+            console.log("picSrc = " + picSrc);
         }
 
 
         /* Move the rest of the characters in the "Enemies available to attack" row */
 
         for (var i = 0; i < 4; i++) {
-            $(".move" + [i]).not(myC).appendTo("#enemy" + [i]);
-        }
-        $(".move" + [i]).not(myC).css({
+
+            /* $(".move" + [i]).not(myC).appendTo("#enemy" + [i]); */
+            $("#enemy" + [i]).append($(".move" + [i]).clone());
+        
+        $(".move" + [i]).css({
             "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
         });
+
+    }
 
         $(".Row1").hide();
 
