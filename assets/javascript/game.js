@@ -129,24 +129,6 @@ console.log("DSidious AP = " + characters.DSidious.AP);
 console.log("DMaul HP = " + characters.DMaul.HP);
 console.log("DMaul AP = " + characters.DMaul.AP);
 
-/* ************************************************************************* */
-/* ************************ Append Image *********************************** */
-
-/* function appendImage(imageSource, containerId, imageId) {
-    img = document.createElement("IMG");
-    img.src = imageSource;
-    img.setAttribute('id', imageId);
-    document.getElementById(containerId).appendChild(img);
-    return imageId;
-} */
-
-/* ************************ Remove Image *********************************** */
-/* function removeImage(imageId) {
-    elementToBeRemoved = document.getElementById(imageId);
-    elementToBeRemoved.parentNode.removeChild(elementToBeRemoved);
-} */
-/* ************************************************************************** */
-
 $(document).ready(function () {
     initialize();
 
@@ -154,15 +136,16 @@ $(document).ready(function () {
     $(".Row1").click(function () {
         if (myC === "") {
             console.log(this);
-            // $("#grid_row_yourChar").text($(this));
-            // $(this).appendTo("#grid_row_yourChar");
-            // $("#grid_row_yourChar").append($(this));
+            $("div", this).clone().appendTo("#grid_row_yourChar");
+            myC = $("div", this).clone();
+            for (var i = 0; i < 4; i++) {
+                $(".move" + [i]).not(this).appendTo("#grid_row_enemies");
+            }
 
-            myC = $(this);
+            myC = $("div", this).clone();
             console.log("myC = " + myC);
-            yourC = $(myC).attr("value");
+            yourC = $(this).attr("value");
             console.log("yourC = " + yourC);
-            //console.log("yourCharPick = " + yourCharPick)
 
             if (yourC == characters.OWKenobi.name) {
                 aHP = characters.OWKenobi.HP;
@@ -171,37 +154,12 @@ $(document).ready(function () {
                 aRealName = characters.OWKenobi.realName;
                 attk = characters.OWKenobi;
                 picSrc = characters.OWKenobi.pic;
-                myImage = appendImage("assets/images/obiwankenobi.png", "grid_char_pick", "pic_yourCharPick");
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
-                $(".Row2").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
-                });
-                $(".Row3").css({
+                $(".Row1").not(this).css({
                     "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "#cc3300"
-                 });
-                $("img").css({
-                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
                 });
-                $(".gridname_yourCharPick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                $(".hp_char_pick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                myImage = appendImage("assets/images/lukeskywalker.png", "grid_enemy0", "pic_yourCharPick");
-                myImage = appendImage("assets/images/darthsidious.png", "grid_enemy1", "pic_yourCharPick");
-                myImage = appendImage("assets/images/darthmaul.png", "grid_enemy2", "pic_yourCharPick");
-
             }
-
-
 
             else if (yourC == characters.LSkywalker.name) {
                 aHP = characters.LSkywalker.HP;
@@ -210,33 +168,11 @@ $(document).ready(function () {
                 aRealName = characters.LSkywalker.realName;
                 attk = characters.LSkywalker;
                 picSrc = characters.LSkywalker.pic;
-                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
-                $(".Row2").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
-                });
-                $(".Row3").css({
+                $(".Row1").not(this).css({
                     "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "#cc3300"
-                 });
-                $("img").css({
-                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
                 });
-                $(".gridname_yourCharPick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                $(".hp_char_pick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                myImage = appendImage("assets/images/obiwankenobi.png", "grid_enemy0", "pic_yourCharPick");
-                myImage = appendImage("assets/images/darthsidious.png", "grid_enemy1", "pic_yourCharPick");
-                myImage = appendImage("assets/images/darthmaul.png", "grid_enemy2", "pic_yourCharPick");
             }
 
             else if (yourC == characters.DSidious.name) {
@@ -246,33 +182,11 @@ $(document).ready(function () {
                 aRealName = characters.DSidious.realName;
                 attk = characters.DSidious;
                 picSrc = characters.DSidious.pic;
-                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
-                $(".hp_char_pick").append('<span>' + aHP + '</span>');                
-                $(".Row2").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
-                });
-                $(".Row3").css({
+                $(".hp_char_pick").append('<span>' + aHP + '</span>');
+                $(".Row1").not(this).css({
                     "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "#cc3300"
-                 });
-                $("img").css({
-                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
                 });
-                $(".gridname_yourCharPick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                $(".hp_char_pick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                myImage = appendImage("assets/images/obiwankenobi.png", "grid_enemy0", "pic_yourCharPick");
-                myImage = appendImage("assets/images/lukeskywalker.png", "grid_enemy1", "pic_yourCharPick");
-                myImage = appendImage("assets/images/darthmaul.png", "grid_enemy2", "pic_yourCharPick");
             }
 
             else if (yourC == characters.DMaul.name) {
@@ -282,33 +196,11 @@ $(document).ready(function () {
                 aRealName = characters.DMaul.realName;
                 attk = characters.DMaul;
                 picSrc = characters.DMaul.pic;
-                myImage = appendImage(picSrc, "grid_char_pick", "pic_yourCharPick");
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
-                $(".hp_char_pick").append('<span>' + aHP + '</span>');              
-                $(".Row2").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#ffffff", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "white"
-                });
-                $(".Row3").css({
+                $(".hp_char_pick").append('<span>' + aHP + '</span>');
+                $(".Row1").not(this).css({
                     "border-style": "solid", "border-width": "3px", "border-color": "#cc3300", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#000000", "outline-width": "3px", "align-items": "center", "background-color": "#cc3300"
-                 });
-                $("img").css({
-                    "height": "95%", "width": "95%", "padding-left": "10px", "padding-bottom": "0", "margin-bottom": "0"
                 });
-                $(".gridname_yourCharPick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                $(".hp_char_pick").css({
-                    "font-size": "0.6em",
-                    "text-align": "center",
-                    "font-family": "'Orbitron', sans-serif",
-                    "margin-bottom": "0px"
-                });
-                myImage = appendImage("assets/images/obiwankenobi.png", "grid_enemy0", "pic_yourCharPick");
-                myImage = appendImage("assets/images/lukeskywalker.png", "grid_enemy1", "pic_yourCharPick");
-                myImage = appendImage("assets/images/darthsidious.png", "grid_enemy2", "pic_yourCharPick");
             }
             console.log("aHP = " + aHP);
             console.log("aAP = " + aAP);
@@ -316,22 +208,9 @@ $(document).ready(function () {
             console.log("aRealName = " + aRealName);
             console.log("attk = " + attk);
             console.log("picSrc = " + picSrc);
-            //  console.log("this characters.this.realName = " + characters.this.realName);
         }
 
-
-        /* Move the rest of the characters in the "Enemies available to attack" row */
-
-       // for (var i = 0; i < 4; i++) {
-
-        //   myImage = appendImage(picSrc, "grid_enemy0", "pic_yourCharPick");
-
-        /* $(".move" + [i]).not(myC).appendTo("#enemy" + [i]); */
-         //  $("#enemy" + [i]).append($(".move" + [i]).clone());
-
-       // } 
-
-        $(".Row1").hide();
+        $("#grid_row_yourChar").hide();
 
     });
 
