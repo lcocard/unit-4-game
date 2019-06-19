@@ -14,6 +14,7 @@ var aHP;
 var aAP;
 var aCAP;
 var dChar;
+var dRealName;
 var dHP;
 var dAP;
 var dCAP;
@@ -57,22 +58,6 @@ var characters = {
         pic: "assets/images/darthmaul.png"
     }
 };
-
-/* ************************ Append Image *********************************** */
-
-function appendImage(imageSource, containerId, imageId) {
-    img = document.createElement("IMG");
-    img.src = imageSource;
-    img.setAttribute('id', imageId);
-    document.getElementById(containerId).appendChild(img);
-    return imageId;
-}
-
-/* ************************ Remove Image *********************************** */
-function removeImage(imageId) {
-    elementToBeRemoved = document.getElementById(imageId);
-    elementToBeRemoved.parentNode.removeChild(elementToBeRemoved);
-}
 
 /* Game reset */
 
@@ -139,7 +124,7 @@ $(document).ready(function () {
             $("div", this).clone().appendTo("#grid_row_yourChar");
             myC = $("div", this).clone();
             for (var i = 0; i < 4; i++) {
-                $(".move" + [i]).not(this).appendTo("#grid_row_enemies");
+                $("#Char-Pick" + [i]).not(this).appendTo(".enemy" + [i]);
             }
 
             myC = $("div", this).clone();
@@ -214,9 +199,70 @@ $(document).ready(function () {
 
     });
 
-
-
     /* Pick your character (attacker) */
+ 
+
+        $(".grid_deff").click(function () {
+            if (myD === "") {
+                $(".You_Have_Defeated_GO").empty();
+                console.log(this);
+                $(this).clone().appendTo("#defender-char");
+                myD = $("div", this).clone();
+                $(this).empty();
+                console.log("myD = " + myD);
+                yourD = $(this).children().attr("value");
+                console.log("yourD = " + yourD);
+    
+                if (yourD == characters.OWKenobi.name) {
+                    dHP = characters.OWKenobi.HP;
+                    dAP = characters.OWKenobi.AP;
+                    dCAP = characters.OWKenobi.CAP;
+                    dRealName = characters.OWKenobi.realName;
+                    deff = characters.OWKenobi;
+                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                }
+    
+                else if (yourD == characters.LSkywalker.name) {
+                    dHP = characters.LSkywalker.HP;
+                    dAP = characters.LSkywalker.AP;
+                    dCAP = characters.LSkywalker.CAP;
+                    dRealName = characters.LSkywalker.realName;
+                    deff = characters.LSkywalker;
+                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                }
+    
+                else if (yourD == characters.DSidious.name) {
+                    dHP = characters.DSidious.HP;
+                    dAP = characters.DSidious.AP;
+                    dCAP = characters.DSidious.CAP;
+                    dRealName = characters.DSidious.realName;
+                    deff = characters.DSidious;
+                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                }
+    
+                else if (yourD == characters.DMaul.name) {
+                    dHP = characters.DMaul.HP;
+                    dAP = characters.DMaul.AP;
+                    dCAP = characters.DMaul.CAP;
+                    dRealName = characters.DMaul.realName;
+                    deff = characters.DMaul;
+                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                }
+                console.log("dHP = " + dHP);
+                console.log("dAP = " + dAP);
+                console.log("dCAP = " + dCAP);
+                console.log("Defender RealName = " + aRealName);
+                console.log("attk = " + deff);
+            }
+    
+            //$(".grid_deff").hide();
+    
+        });
+
 
     /* Pick enemy (defender) */
 
