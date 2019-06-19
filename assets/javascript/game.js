@@ -221,6 +221,11 @@ $(document).ready(function () {
                     deff = characters.OWKenobi;
                     $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                     $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                    console.log("dHP = " + dHP);
+                    console.log("dAP = " + dAP);
+                    console.log("dCAP = " + dCAP);
+                    console.log("Defender RealName = " + dRealName);
+                    console.log("attk = " + deff);
                 }
     
                 else if (yourD == characters.LSkywalker.name) {
@@ -231,6 +236,11 @@ $(document).ready(function () {
                     deff = characters.LSkywalker;
                     $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                     $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                    console.log("dHP = " + dHP);
+                    console.log("dAP = " + dAP);
+                    console.log("dCAP = " + dCAP);
+                    console.log("Defender RealName = " + dRealName);
+                    console.log("attk = " + deff);
                 }
     
                 else if (yourD == characters.DSidious.name) {
@@ -241,6 +251,11 @@ $(document).ready(function () {
                     deff = characters.DSidious;
                     $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                     $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                    console.log("dHP = " + dHP);
+                    console.log("dAP = " + dAP);
+                    console.log("dCAP = " + dCAP);
+                    console.log("Defender RealName = " + dRealName);
+                    console.log("attk = " + deff);
                 }
     
                 else if (yourD == characters.DMaul.name) {
@@ -251,12 +266,13 @@ $(document).ready(function () {
                     deff = characters.DMaul;
                     $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                     $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                    console.log("dHP = " + dHP);
+                    console.log("dAP = " + dAP);
+                    console.log("dCAP = " + dCAP);
+                    console.log("Defender RealName = " + dRealName);
+                    console.log("attk = " + deff);
                 }
-                console.log("dHP = " + dHP);
-                console.log("dAP = " + dAP);
-                console.log("dCAP = " + dCAP);
-                console.log("Defender RealName = " + aRealName);
-                console.log("attk = " + deff);
+
             }
     
             //$(".grid_deff").hide();
