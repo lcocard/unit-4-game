@@ -208,7 +208,7 @@ $(document).ready(function () {
                 console.log(this);
                 $(this).clone().appendTo("#defender-char");
                 myD = $("div", this).clone();
-                $(this).empty();
+                $(this).hide();
                 console.log("myD = " + myD);
                 yourD = $(this).children().attr("value");
                 console.log("yourD = " + yourD);
