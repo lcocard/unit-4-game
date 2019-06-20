@@ -24,7 +24,7 @@ var attk;
 var deff;
 var i_enemy = 0
 var wins = 0;
-var dynamicId;
+var dynamicId_flag;
 // var initial_aAP;
 
 
@@ -316,10 +316,8 @@ $(document).ready(function () {
         dynamicId_flag = $("#dynamicId").length;
         console.log("dynamic_id flag = " + dynamicId_flag);
         $(".attkbtn").click(function () {
-            var dynamicId_flag = $("#dynamicId").length;
-            console.log("dynamic_id flag = " + dynamicId_flag);
             if ($("#dynamicId").length == 0) {
-                $(".No_Enemy_Here").html("No Enemy Here.");
+                $(".No_Enemy_Here").html("<p> No Enemy Here!!! </p>");
             }
             else {
                 console.log("#dynamicID exists!!!");
