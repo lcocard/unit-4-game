@@ -20,6 +20,12 @@ var dAP;
 var dCAP;
 var yourC;
 var yourD;
+var attk;
+var deff;
+var i_enemy = 0
+var wins = 0;
+// var initial_aAP;
+
 
 
 var characters = {
@@ -131,12 +137,15 @@ $(document).ready(function () {
             yourC = $(this).attr("value");
             console.log("yourC = " + yourC);
 
+
             if (yourC == characters.OWKenobi.name) {
                 aHP = characters.OWKenobi.HP;
                 aAP = characters.OWKenobi.AP;
                 aCAP = characters.OWKenobi.CAP;
                 aRealName = characters.OWKenobi.realName;
                 picSrc = characters.OWKenobi.pic;
+                attk = characters.OWKenobi;
+                //initial_aAP = aAP;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
                 $(".Row1").not(this).css({
@@ -150,6 +159,8 @@ $(document).ready(function () {
                 aCAP = characters.LSkywalker.CAP;
                 aRealName = characters.LSkywalker.realName;
                 picSrc = characters.LSkywalker.pic;
+                attk = characters.LSkywalker;
+                //initial_aAP = aAP;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
                 $(".Row1").not(this).css({
@@ -163,6 +174,8 @@ $(document).ready(function () {
                 aCAP = characters.DSidious.CAP;
                 aRealName = characters.DSidious.realName;
                 picSrc = characters.DSidious.pic;
+                attk = characters.DSidious;
+                //initial_aAP = aAP;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
                 $(".Row1").not(this).css({
@@ -176,6 +189,8 @@ $(document).ready(function () {
                 aCAP = characters.DMaul.CAP;
                 aRealName = characters.DMaul.realName;
                 picSrc = characters.DMaul.pic;
+                attk = characters.DMaul;
+                //initial_aAP = aAP;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
                 $(".Row1").not(this).css({
@@ -200,6 +215,7 @@ $(document).ready(function () {
     console.log("defender_flag = " + defender_flag);
 
     $(".grid_deff").click(function () {
+        i_enemy++;
         if (myD === "") {
             $(".You_Have_Defeated_GO").empty();
             console.log(this);
@@ -215,13 +231,14 @@ $(document).ready(function () {
                 dAP = characters.OWKenobi.AP;
                 dCAP = characters.OWKenobi.CAP;
                 dRealName = characters.OWKenobi.realName;
+                deff = characters.OWKenobi;
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
                     "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
-                $(".name", "#defender-char").css({"color": "#ffffff"});
-                $(".HP", "#defender-char").css({"color": "#ffffff"});
+                $(".name", "#defender-char").css({ "color": "#ffffff" });
+                $(".HP", "#defender-char").css({ "color": "#ffffff" });
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -233,13 +250,14 @@ $(document).ready(function () {
                 dAP = characters.LSkywalker.AP;
                 dCAP = characters.LSkywalker.CAP;
                 dRealName = characters.LSkywalker.realName;
+                deff = characters.LSkywalker;
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
-                "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
-                $(".name", "#defender-char").css({"color": "#ffffff"});
-                $(".HP", "#defender-char").css({"color": "#ffffff"});
+                $(".name", "#defender-char").css({ "color": "#ffffff" });
+                $(".HP", "#defender-char").css({ "color": "#ffffff" });
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -252,13 +270,14 @@ $(document).ready(function () {
                 dAP = characters.DSidious.AP;
                 dCAP = characters.DSidious.CAP;
                 dRealName = characters.DSidious.realName;
+                deff = characters.DSidious;
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
-                "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
-                $(".name", "#defender-char").css({"color": "#ffffff"});
-                $(".HP", "#defender-char").css({"color": "#ffffff"});
+                $(".name", "#defender-char").css({ "color": "#ffffff" });
+                $(".HP", "#defender-char").css({ "color": "#ffffff" });
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -270,13 +289,14 @@ $(document).ready(function () {
                 dAP = characters.DMaul.AP;
                 dCAP = characters.DMaul.CAP;
                 dRealName = characters.DMaul.realName;
+                deff = characters.DMaul;
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
-                "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
-                $(".name", "#defender-char").css({"color": "#ffffff"});
-                $(".HP", "#defender-char").css({"color": "#ffffff"});
+                $(".name", "#defender-char").css({ "color": "#ffffff" });
+                $(".HP", "#defender-char").css({ "color": "#ffffff" });
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -290,15 +310,76 @@ $(document).ready(function () {
 
         console.log("defender_flag = " + defender_flag);
 
+
+
         // $("#defender-char").empty();
+
+
+
+        $(".attkbtn").click(function () {
+            if (defender_flag == 0) {
+                $(".No_Enemy_Here").html("No Enemy Here.");
+            }
+            if (!(aHP < 1) || (dHP < 1)) {
+                dHP = (dHP - aAP);
+                $(".You_Attacked").html(("You attacked " + dRealName + " for " + aAP + " damage."))
+                $("." + yourD).html('<span>' + dHP + '</span>')
+                aHP = (aHP - dCAP);
+                $(".Attacked_You_Back").html(dRealName + " attacked you back for " + dCAP + " damage. ")
+                $("." + yourC).html('<span>' + aHP + '</span>');
+
+                aAP = (aAP + aAP);
+                attk.aAP = aAP;
+                console.log("aAP = " + aAP);
+            }
+            if (dHP < 0) {
+                $(".You_Attacked").empty();
+                $(".Attacked_You_Back").empty();
+
+                $(".You_Have_Defeated_GO").html("You have defeated " + dRealName + ", you can chose to fight another enemy.");
+                $("#defender-char").empty();
+                wins++;
+                myD = "";
+                console.log("after defeating, aAP = " + aAP);
+                console.log("after defeating, wins = " + wins);
+            }
+            console.log("i_enemy = " + i_enemy)
+            if (i_enemy === 3) {
+                console.log("if YOU WON, wins = " + wins);
+                $(".You_Attacked").empty();
+                $(".Attacked_You_Back").empty();
+                $(".You_Been_Defeated").empty();
+                $(".You_Won_GO").empty();
+                $(".You_Have_Defeated_GO").empty();
+                $(".You_Attacked").html("You Won !!! GAME OVER !!!");
+                $(".init").show();
+                $(".init").click(function () {
+                    window.location.reload();
+                })
+            }
+
+            if (aHP <= 0) {
+                $(".attkbtn").hide();
+                $(".init").show();
+                $(".You_Attacked").empty();
+                $(".Attacked_You_Back").empty();
+                $(".You_Won_GO").empty();
+                $(".You_Have_Defeated_GO").empty();
+                $(".You_Attacked").empty();
+                $(".You_Been_Defeated").html("You've been defetead... GAME OVER!!!");
+                $(".init").click(function () {
+                    window.location.reload();
+                })
+            }
+
+        })
 
     });
 
-    $(".attkbtn").click(function () {
-        if (defender_flag == 0) {
-            $(".No_Enemy_Here").html("No Enemy Here.");
-        }
-    })
+
+
+
+
 
 
     /* New Game */
