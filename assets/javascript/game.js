@@ -20,8 +20,6 @@ var dAP;
 var dCAP;
 var yourC;
 var yourD;
-var attk;
-var deff;
 
 
 var characters = {
@@ -127,6 +125,7 @@ $(document).ready(function () {
                 $("#Char-Pick" + [i]).not(this).appendTo(".enemy" + [i]);
             }
 
+            //myC = $("div", this).clone();
             myC = $("div", this).clone();
             console.log("myC = " + myC);
             yourC = $(this).attr("value");
@@ -137,7 +136,6 @@ $(document).ready(function () {
                 aAP = characters.OWKenobi.AP;
                 aCAP = characters.OWKenobi.CAP;
                 aRealName = characters.OWKenobi.realName;
-                attk = characters.OWKenobi;
                 picSrc = characters.OWKenobi.pic;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
@@ -151,7 +149,6 @@ $(document).ready(function () {
                 aAP = characters.LSkywalker.AP;
                 aCAP = characters.LSkywalker.CAP;
                 aRealName = characters.LSkywalker.realName;
-                attk = characters.LSkywalker;
                 picSrc = characters.LSkywalker.pic;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
@@ -165,7 +162,6 @@ $(document).ready(function () {
                 aAP = characters.DSidious.AP;
                 aCAP = characters.DSidious.CAP;
                 aRealName = characters.DSidious.realName;
-                attk = characters.DSidious;
                 picSrc = characters.DSidious.pic;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
@@ -179,7 +175,6 @@ $(document).ready(function () {
                 aAP = characters.DMaul.AP;
                 aCAP = characters.DMaul.CAP;
                 aRealName = characters.DMaul.realName;
-                attk = characters.DMaul;
                 picSrc = characters.DMaul.pic;
                 $(".gridname_yourCharPick").append('<span>' + aRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + aHP + '</span>');
@@ -191,7 +186,6 @@ $(document).ready(function () {
             console.log("aAP = " + aAP);
             console.log("aCAP = " + aCAP);
             console.log("aRealName = " + aRealName);
-            console.log("attk = " + attk);
             console.log("picSrc = " + picSrc);
         }
 
@@ -199,90 +193,105 @@ $(document).ready(function () {
 
     });
 
-    /* Pick your character (attacker) */
- 
-
-        $(".grid_deff").click(function () {
-            if (myD === "") {
-                $(".You_Have_Defeated_GO").empty();
-                console.log(this);
-                $(this).clone().appendTo("#defender-char");
-                myD = $("div", this).clone();
-                $(this).hide();
-                console.log("myD = " + myD);
-                yourD = $(this).children().attr("value");
-                console.log("yourD = " + yourD);
-    
-                if (yourD == characters.OWKenobi.name) {
-                    dHP = characters.OWKenobi.HP;
-                    dAP = characters.OWKenobi.AP;
-                    dCAP = characters.OWKenobi.CAP;
-                    dRealName = characters.OWKenobi.realName;
-                    deff = characters.OWKenobi;
-                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
-                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
-                    console.log("dHP = " + dHP);
-                    console.log("dAP = " + dAP);
-                    console.log("dCAP = " + dCAP);
-                    console.log("Defender RealName = " + dRealName);
-                    console.log("attk = " + deff);
-                }
-    
-                else if (yourD == characters.LSkywalker.name) {
-                    dHP = characters.LSkywalker.HP;
-                    dAP = characters.LSkywalker.AP;
-                    dCAP = characters.LSkywalker.CAP;
-                    dRealName = characters.LSkywalker.realName;
-                    deff = characters.LSkywalker;
-                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
-                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
-                    console.log("dHP = " + dHP);
-                    console.log("dAP = " + dAP);
-                    console.log("dCAP = " + dCAP);
-                    console.log("Defender RealName = " + dRealName);
-                    console.log("attk = " + deff);
-                }
-    
-                else if (yourD == characters.DSidious.name) {
-                    dHP = characters.DSidious.HP;
-                    dAP = characters.DSidious.AP;
-                    dCAP = characters.DSidious.CAP;
-                    dRealName = characters.DSidious.realName;
-                    deff = characters.DSidious;
-                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
-                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
-                    console.log("dHP = " + dHP);
-                    console.log("dAP = " + dAP);
-                    console.log("dCAP = " + dCAP);
-                    console.log("Defender RealName = " + dRealName);
-                    console.log("attk = " + deff);
-                }
-    
-                else if (yourD == characters.DMaul.name) {
-                    dHP = characters.DMaul.HP;
-                    dAP = characters.DMaul.AP;
-                    dCAP = characters.DMaul.CAP;
-                    dRealName = characters.DMaul.realName;
-                    deff = characters.DMaul;
-                    $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
-                    $(".hp_char_pick").append('<span>' + dHP + '</span>');
-                    console.log("dHP = " + dHP);
-                    console.log("dAP = " + dAP);
-                    console.log("dCAP = " + dCAP);
-                    console.log("Defender RealName = " + dRealName);
-                    console.log("attk = " + deff);
-                }
-
-            }
-    
-            //$(".grid_deff").hide();
-    
-        });
-
-
     /* Pick enemy (defender) */
 
+    var defender_flag = $("#defender-char").children().length;
+
+    console.log("defender_flag = " + defender_flag);
+
+    $(".grid_deff").click(function () {
+        if (myD === "") {
+            $(".You_Have_Defeated_GO").empty();
+            console.log(this);
+            $(this).clone().appendTo("#defender-char");
+            myD = $("div", this).clone();
+            $(this).hide();
+            console.log("myD = " + myD);
+            yourD = $(this).children().attr("value");
+            console.log("yourD = " + yourD);
+
+            if (yourD == characters.OWKenobi.name) {
+                dHP = characters.OWKenobi.HP;
+                dAP = characters.OWKenobi.AP;
+                dCAP = characters.OWKenobi.CAP;
+                dRealName = characters.OWKenobi.realName;
+                $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                $(".Row1", "#defender-char").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                });
+                console.log("dHP = " + dHP);
+                console.log("dAP = " + dAP);
+                console.log("dCAP = " + dCAP);
+                console.log("Defender RealName = " + dRealName);
+            }
+
+            else if (yourD == characters.LSkywalker.name) {
+                dHP = characters.LSkywalker.HP;
+                dAP = characters.LSkywalker.AP;
+                dCAP = characters.LSkywalker.CAP;
+                dRealName = characters.LSkywalker.realName;
+                $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                $(".Row1", "#defender-char").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                });
+                console.log("dHP = " + dHP);
+                console.log("dAP = " + dAP);
+                console.log("dCAP = " + dCAP);
+                console.log("Defender RealName = " + dRealName);
+
+            }
+
+            else if (yourD == characters.DSidious.name) {
+                dHP = characters.DSidious.HP;
+                dAP = characters.DSidious.AP;
+                dCAP = characters.DSidious.CAP;
+                dRealName = characters.DSidious.realName;
+                $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                $(".Row1", "#defender-char").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                });
+                console.log("dHP = " + dHP);
+                console.log("dAP = " + dAP);
+                console.log("dCAP = " + dCAP);
+                console.log("Defender RealName = " + dRealName);
+            }
+
+            else if (yourD == characters.DMaul.name) {
+                dHP = characters.DMaul.HP;
+                dAP = characters.DMaul.AP;
+                dCAP = characters.DMaul.CAP;
+                dRealName = characters.DMaul.realName;
+                $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
+                $(".hp_char_pick").append('<span>' + dHP + '</span>');
+                $(".Row1", "#defender-char").css({
+                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                });
+                console.log("dHP = " + dHP);
+                console.log("dAP = " + dAP);
+                console.log("dCAP = " + dCAP);
+                console.log("Defender RealName = " + dRealName);
+            }
+        }
+
     /* Attack */
+
+    defender_flag = $("#defender-char").children().length;
+
+    console.log("defender_flag = " + defender_flag);
+
+    // $("#defender-char").empty();
+
+    });
+
+    $(".attkbtn").click(function(){
+        if (defender_flag == 0) {
+            $(".No_Enemy_Here").html("No Enemy Here.");
+        }
+    })
+
 
     /* New Game */
     /* initialize(); */
