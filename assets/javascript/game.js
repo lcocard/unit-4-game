@@ -220,6 +220,8 @@ $(document).ready(function () {
                 $(".Row1", "#defender-char").css({
                     "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
+                $(".name", "#defender-char").css({"color": "#ffffff"});
+                $(".HP", "#defender-char").css({"color": "#ffffff"});
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -234,8 +236,10 @@ $(document).ready(function () {
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
+                $(".name", "#defender-char").css({"color": "#ffffff"});
+                $(".HP", "#defender-char").css({"color": "#ffffff"});
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -251,8 +255,10 @@ $(document).ready(function () {
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
+                $(".name", "#defender-char").css({"color": "#ffffff"});
+                $(".HP", "#defender-char").css({"color": "#ffffff"});
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -267,8 +273,10 @@ $(document).ready(function () {
                 $(".gridname_yourCharPick").append('<span>' + dRealName + '</span>');
                 $(".hp_char_pick").append('<span>' + dHP + '</span>');
                 $(".Row1", "#defender-char").css({
-                    "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
+                "border-style": "solid", "border-width": "3px", "border-color": "#000000", "box-sizing": "border-box", "outline-style": "solid", "outline-color": "#1f8212", "outline-width": "3px", "align-items": "center", "background-color": "#000000"
                 });
+                $(".name", "#defender-char").css({"color": "#ffffff"});
+                $(".HP", "#defender-char").css({"color": "#ffffff"});
                 console.log("dHP = " + dHP);
                 console.log("dAP = " + dAP);
                 console.log("dCAP = " + dCAP);
@@ -276,17 +284,17 @@ $(document).ready(function () {
             }
         }
 
-    /* Attack */
+        /* Attack */
 
-    defender_flag = $("#defender-char").children().length;
+        defender_flag = $("#defender-char").children().length;
 
-    console.log("defender_flag = " + defender_flag);
+        console.log("defender_flag = " + defender_flag);
 
-    // $("#defender-char").empty();
+        // $("#defender-char").empty();
 
     });
 
-    $(".attkbtn").click(function(){
+    $(".attkbtn").click(function () {
         if (defender_flag == 0) {
             $(".No_Enemy_Here").html("No Enemy Here.");
         }
