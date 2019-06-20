@@ -24,6 +24,7 @@ var attk;
 var deff;
 var i_enemy = 0
 var wins = 0;
+var dynamicId;
 // var initial_aAP;
 
 
@@ -62,6 +63,8 @@ var characters = {
         pic: "assets/images/darthmaul.png"
     }
 };
+
+
 
 /* Game reset */
 
@@ -216,12 +219,14 @@ $(document).ready(function () {
 
     $(".grid_deff").click(function () {
         i_enemy++;
+        $(".attkbtn").show();
         if (myD === "") {
             $(".You_Have_Defeated_GO").empty();
             console.log(this);
-            $(this).clone().appendTo("#defender-char");
+            $(this).clone().appendTo("#defender-char").attr("id", "dynamicId");
             myD = $("div", this).clone();
             $(this).hide();
+            $(".No_Enemy_Here").empty();
             console.log("myD = " + myD);
             yourD = $(this).children().attr("value");
             console.log("yourD = " + yourD);
@@ -307,19 +312,19 @@ $(document).ready(function () {
         /* Attack */
 
         defender_flag = $("#defender-char").children().length;
-
         console.log("defender_flag = " + defender_flag);
-
-
-
-        // $("#defender-char").empty();
-
-
-
+        dynamicId_flag = $("#dynamicId").length;
+        console.log("dynamic_id flag = " + dynamicId_flag);
         $(".attkbtn").click(function () {
-            if (defender_flag == 0) {
+            var dynamicId_flag = $("#dynamicId").length;
+            console.log("dynamic_id flag = " + dynamicId_flag);
+            if ($("#dynamicId").length == 0) {
                 $(".No_Enemy_Here").html("No Enemy Here.");
             }
+            else {
+                console.log("#dynamicID exists!!!");
+            }
+
             if (!(aHP < 1) || (dHP < 1)) {
                 dHP = (dHP - aAP);
                 $(".You_Attacked").html(("You attacked " + dRealName + " for " + aAP + " damage."))
@@ -338,6 +343,8 @@ $(document).ready(function () {
 
                 $(".You_Have_Defeated_GO").html("You have defeated " + dRealName + ", you can chose to fight another enemy.");
                 $("#defender-char").empty();
+                $(".attkbtn").hide();
+                $(".No_Enemy_Here").empty();
                 wins++;
                 myD = "";
                 console.log("after defeating, aAP = " + aAP);
@@ -345,13 +352,16 @@ $(document).ready(function () {
             }
             console.log("i_enemy = " + i_enemy)
             if (i_enemy === 3) {
+
                 console.log("if YOU WON, wins = " + wins);
                 $(".You_Attacked").empty();
                 $(".Attacked_You_Back").empty();
                 $(".You_Been_Defeated").empty();
                 $(".You_Won_GO").empty();
                 $(".You_Have_Defeated_GO").empty();
+                $(".No_Enemy_Here").empty();
                 $(".You_Attacked").html("You Won !!! GAME OVER !!!");
+                $(".attkbtn").hide();
                 $(".init").show();
                 $(".init").click(function () {
                     window.location.reload();
@@ -366,6 +376,7 @@ $(document).ready(function () {
                 $(".You_Won_GO").empty();
                 $(".You_Have_Defeated_GO").empty();
                 $(".You_Attacked").empty();
+                $(".No_Enemy_Here").empty();
                 $(".You_Been_Defeated").html("You've been defetead... GAME OVER!!!");
                 $(".init").click(function () {
                     window.location.reload();
@@ -375,15 +386,6 @@ $(document).ready(function () {
         })
 
     });
-
-
-
-
-
-
-
-    /* New Game */
-    /* initialize(); */
 });
 
 
