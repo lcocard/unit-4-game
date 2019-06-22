@@ -24,7 +24,7 @@ var attk;
 var deff;
 var i_enemy = 0
 var wins = 0;
-var dynamicClass_flag;
+var dynamicID_flag;
 // var initial_aAP;
 
 
@@ -129,13 +129,17 @@ $(document).ready(function () {
     $(".attkbtn").click(function () {
 
         if ($("#dynamicID").length > 0) {
-           // alert("HI12");
+            // alert("HI12");
             console.log("#dynamicID exists!!!");
         } else {
             // alert("HI13");
             $(".No_Enemy_Here").html("<p> No Enemy Here!!! </p>");
         }
     });
+
+
+
+
 
     /* Pick your character (attacker) */
     $(".Row1").click(function () {
@@ -231,13 +235,19 @@ $(document).ready(function () {
     console.log("defender_flag = " + defender_flag);
 
     $(".grid_deff").click(function () {
+
         $(".No_Enemy_Here").empty();
         i_enemy++;
-        $(".attkbtn").show();
+        if (aHP <= 0) {
+            //alert("1. aHP = " + aHP);
+            $(".attkbtn").hide();
+        } else {
+            $(".attkbtn").show();
+        }
         if (myD === "") {
             $(".You_Have_Defeated_GO").empty();
             console.log(this);
-            $(this).clone().appendTo("#defender-char").attr("id", "dynamicClass");
+            $(this).clone().appendTo("#defender-char").attr("id", "dynamicID");
             myD = $("div", this).clone();
             $(this).hide();
             $(".No_Enemy_Here").empty();
@@ -327,9 +337,9 @@ $(document).ready(function () {
 
         defender_flag = $("#defender-char").children().length;
         console.log("defender_flag = " + defender_flag);
-        dynamicClass_flag = $("#dynamicClass").length;
-        //alert(dynamicClass_flag);
-        console.log("dynamic_Class flag = " + dynamicClass_flag);
+        dynamicID_flag = $("#dynamicID").length;
+        //alert(dynamicID_flag);
+        console.log("dynamic_ID flag = " + dynamicID_flag);
         // initial_aAP = aAP;
         $(".attkbtn").click(function () {
             $(".No_Enemy_Here").empty();
@@ -348,6 +358,13 @@ $(document).ready(function () {
 
                 console.log("aAP = " + aAP);
             }
+
+
+
+
+
+
+
             if (dHP < 0) {
                 $(".You_Attacked").empty();
                 $(".Attacked_You_Back").empty();
@@ -381,15 +398,24 @@ $(document).ready(function () {
             }
 
             if (aHP <= 0) {
+
+                $(".init").click(function () {
+                    window.location.reload();
+                })
+
+                $(".You_Been_Defeated").html("You've been defetead by " + dRealName + "... GAME OVER!!!");
+                //$("#defender-char").empty();
                 $(".attkbtn").hide();
                 $(".init").show();
+                $("#dynamicID").empty();
+                $(".No_Enemy_Here").empty();
                 $(".You_Attacked").empty();
                 $(".Attacked_You_Back").empty();
                 $(".You_Won_GO").empty();
                 $(".You_Have_Defeated_GO").empty();
                 $(".You_Attacked").empty();
-                $(".No_Enemy_Here").empty();
-                $(".You_Been_Defeated").html("You've been defetead... GAME OVER!!!");
+
+
                 $(".init").click(function () {
                     window.location.reload();
                 })
