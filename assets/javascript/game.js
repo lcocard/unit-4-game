@@ -25,7 +25,7 @@ var deff;
 var i_enemy = 0;
 var wins = 0;
 var dynamicID_flag;
-// var initial_aAP;
+var initial_aAP;
 var Game_Over = 1;
 
 var characters = {
@@ -34,7 +34,7 @@ var characters = {
     realName: "Obi-Wan Kenobi",
     HP: 120,
     AP: 8,
-    CAP: 24,
+    CAP: 10,
     pic: "assets/images/obiwankenobi.png"
   },
   LSkywalker: {
@@ -50,7 +50,7 @@ var characters = {
     realName: "Darth Sidious",
     HP: 150,
     AP: 10,
-    CAP: 20,
+    CAP: 14,
     pic: "assets/images/darthsidious.png"
   },
   DMaul: {
@@ -58,7 +58,7 @@ var characters = {
     realName: "Darth Maul",
     HP: 180,
     AP: 12,
-    CAP: 25,
+    CAP: 15,
     pic: "assets/images/darthmaul.png"
   }
 };
@@ -147,9 +147,14 @@ $(document).ready(function() {
   $(".Row1").click(function() {
     if (myC === "") {
       console.log(this);
-      $("div", this)
+      /* $("div", this)
         .clone()
-        .appendTo("#grid_row_yourChar");
+        .appendTo("#grid_row_yourChar"); */
+      $(this)
+        .clone()
+        .appendTo("#grid_row_yourChar")
+        .attr("id", "dynamic_yourChar_ID");
+
       myC = $("div", this).clone();
       for (var i = 0; i < 4; i++) {
         $("#Char-Pick" + [i])
@@ -157,8 +162,7 @@ $(document).ready(function() {
           .appendTo(".enemy" + [i]);
       }
 
-      //myC = $("div", this).clone();
-      myC = $("div", this).clone();
+      // myC = $("div", this).clone();
       console.log("myC = " + myC);
       yourC = $(this).attr("value");
       console.log("yourC = " + yourC);
@@ -186,6 +190,17 @@ $(document).ready(function() {
             "align-items": "center",
             "background-color": "#cc3300"
           });
+        $("#dynamic_yourChar_ID", "#grid_row_yourChar").css({
+          "border-style": "solid",
+          "border-width": "3px",
+          "border-color": "#ffffff",
+          "box-sizing": "border-box",
+          "outline-style": "solid",
+          "outline-color": "#1f8212",
+          "outline-width": "3px",
+          "align-items": "center",
+          "background-color": "white"
+        });
       } else if (yourC == characters.LSkywalker.name) {
         aHP = characters.LSkywalker.HP;
         aAP = characters.LSkywalker.AP;
@@ -209,6 +224,17 @@ $(document).ready(function() {
             "align-items": "center",
             "background-color": "#cc3300"
           });
+        $("#dynamic_yourChar_ID", "#grid_row_yourChar").css({
+          "border-style": "solid",
+          "border-width": "3px",
+          "border-color": "#ffffff",
+          "box-sizing": "border-box",
+          "outline-style": "solid",
+          "outline-color": "#1f8212",
+          "outline-width": "3px",
+          "align-items": "center",
+          "background-color": "white"
+        });
       } else if (yourC == characters.DSidious.name) {
         aHP = characters.DSidious.HP;
         aAP = characters.DSidious.AP;
@@ -232,6 +258,17 @@ $(document).ready(function() {
             "align-items": "center",
             "background-color": "#cc3300"
           });
+        $("#dynamic_yourChar_ID", "#grid_row_yourChar").css({
+          "border-style": "solid",
+          "border-width": "3px",
+          "border-color": "#ffffff",
+          "box-sizing": "border-box",
+          "outline-style": "solid",
+          "outline-color": "#1f8212",
+          "outline-width": "3px",
+          "align-items": "center",
+          "background-color": "white"
+        });
       } else if (yourC == characters.DMaul.name) {
         aHP = characters.DMaul.HP;
         aAP = characters.DMaul.AP;
@@ -242,6 +279,7 @@ $(document).ready(function() {
         //initial_aAP = aAP;
         $(".gridname_yourCharPick").append("<span>" + aRealName + "</span>");
         $(".hp_char_pick").append("<span>" + aHP + "</span>");
+
         $(".Row1")
           .not(this)
           .css({
@@ -255,6 +293,17 @@ $(document).ready(function() {
             "align-items": "center",
             "background-color": "#cc3300"
           });
+        $("#dynamic_yourChar_ID", "#grid_row_yourChar").css({
+          "border-style": "solid",
+          "border-width": "3px",
+          "border-color": "#ffffff",
+          "box-sizing": "border-box",
+          "outline-style": "solid",
+          "outline-color": "#1f8212",
+          "outline-width": "3px",
+          "align-items": "center",
+          "background-color": "white"
+        });
       }
       console.log("aHP = " + aHP);
       console.log("aAP = " + aAP);
@@ -262,8 +311,10 @@ $(document).ready(function() {
       console.log("aRealName = " + aRealName);
       console.log("picSrc = " + picSrc);
     }
-
-    $("#grid_row_yourChar").hide();
+    // **********************************************
+    // $("#grid_row_yourChar").hide();
+    $("#charPick").hide();
+    //****************************************** */
   });
 
   /* Pick enemy (defender) */
@@ -417,7 +468,7 @@ $(document).ready(function() {
     dynamicID_flag = $("#dynamicID").length;
     //alert(dynamicID_flag);
     console.log("dynamic_ID flag = " + dynamicID_flag);
-    // initial_aAP = aAP;
+    initial_aAP = aAP;
     $(".attkbtn").click(function() {
       $(".No_Enemy_Here").empty();
 
@@ -434,8 +485,8 @@ $(document).ready(function() {
         );
         $("." + yourC).html("<span>" + aHP + "</span>");
 
-        attk.aAP = aAP;
-        aAP = aAP + aAP;
+        // attk.aAP = aAP;
+        aAP = aAP + initial_aAP;
 
         console.log("aAP = " + aAP);
       }
@@ -477,8 +528,8 @@ $(document).ready(function() {
 
       if (aHP <= 0) {
         /*  $(".init").click(function() {
-          window.location.reload();
-        }); */
+                  window.location.reload();
+                }); */
 
         $(".You_Been_Defeated").html(
           "You've been defetead by " + dRealName + "... GAME OVER!!!"
